@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.navigationexersice.fragments.MainFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_boxFragment"
+            app:destination="@id/boxFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/boxFragment"
+        android:name="com.example.navigationexersice.fragments.BoxFragment"
+        android:label="{colorName} Box"
+        tools:layout="@layout/fragment_box" >
+        <action
+            android:id="@+id/action_boxFragment_to_secretFragment"
+            app:destination="@id/secretFragment" />
+        <argument
+            android:name="colorId"
+            app:argType="long" />
+        <argument
+            android:name="colorName"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/secretFragment"
+        android:name="com.example.navigationexersice.fragments.SecretFragment"
+        android:label="Secret"
+        tools:layout="@layout/fragment_secret" />
+</navigation>
